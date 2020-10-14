@@ -81,6 +81,12 @@ a {
   font-size: 13px;
   padding-bottom: 5px;
 }
+.hidden_menu {
+  display: none;
+}
+.blur {
+  display: none;
+}
 .menu a {
   color: var(--dark_b);
   font-weight: 500;
@@ -90,6 +96,7 @@ a {
 }
 .hamburger_btn {
   display: none;
+  cursor: pointer;
 }
 /* ! Showcase */
 .showcase {
@@ -147,7 +154,7 @@ a {
 .whats_right {
   position: relative;
 }
-.third_title:before {
+.th_top:before {
   font-size: 10px;
   display: flex;
   line-height: 1rem;
@@ -162,6 +169,37 @@ a {
   background-color: var(--bright_red);
   color: white;
 }
+.th_middle:before {
+  font-size: 10px;
+  display: flex;
+  line-height: 1rem;
+  justify-content: center;
+  content: "02";
+  position: absolute;
+  border-radius: 10px;
+  left: -40px;
+  top: 2px;
+  height: 20px;
+  width: 30px;
+  background-color: var(--bright_red);
+  color: white;
+}
+.th_bottom:before {
+  font-size: 10px;
+  display: flex;
+  line-height: 1rem;
+  justify-content: center;
+  content: "03";
+  position: absolute;
+  border-radius: 10px;
+  left: -40px;
+  top: 2px;
+  height: 20px;
+  width: 30px;
+  background-color: var(--bright_red);
+  color: white;
+}
+
 .third_title {
   font-size: 18px;
   color: var(--dark_b);
@@ -201,7 +239,9 @@ a {
 .get_start {
   grid-area: get_btn;
 }
-
+.slide_control {
+  display: none;
+}
 .comment {
   display: flex;
   flex-direction: column;
@@ -212,6 +252,7 @@ a {
   color: var(--dark_b);
   font-size: 11px;
   border-radius: 10px;
+  transition: 0.5s ease;
 }
 .comment img {
   position: absolute;
@@ -318,6 +359,7 @@ a {
   color: hsl(228, 45%, 44%);
 }
 
+/* ! Media Queries*/
 @media (max-width: 800px) {
   .header .menu,
   .header .btn_primary {
@@ -361,6 +403,8 @@ a {
   .third_title {
     background-color: var(--v_pale_r);
     border-radius: 10px;
+    font-size: 12px;
+    line-height: 30px;
   }
   .third_title:before {
     left: 7%;
@@ -368,6 +412,9 @@ a {
   }
   .testimonials {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .left_comment {
     display: none !important;
@@ -377,6 +424,22 @@ a {
   }
   .get_start {
     display: none;
+  }
+  .slide_control {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide_control i {
+    color: var(--bright_red);
+    padding: 5px 5px;
+    position: relative;
+    cursor: pointer;
+  }
+  .testimonials .btn_primary {
+    background: transparent;
+    box-shadow: none;
   }
   .simplify {
     flex-direction: column;
@@ -409,4 +472,70 @@ a {
   .update .btn_primary {
     height: 40px;
   }
+  /* ! hidden menu querie media*/
+  .hidden_menu {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    z-index: 40;
+    padding: 20px;
+    display: none;
+  }
+
+  .blur {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.2049194677871149) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 20;
+  }
+  .show_section {
+    display: flex !important;
+  }
+  .hidden_menu .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.radio_container {
+  position: relative;
+}
+
+input[type="radio"] {
+  opacity: 0;
+}
+.check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background: white;
+  border: 3px solid var(--bright_red);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.radio_container:hover input ~ .check {
+  background-color: var(--bright_red);
+  border: 0;
+}
+
+.radio_container input:checked ~ .check {
+  background-color: var(--bright_red);
 }

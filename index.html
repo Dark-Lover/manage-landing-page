@@ -39,8 +39,18 @@
             src="/images/icon-hamburger.svg"
             alt="hamburger"
           />
-          <!-- TODO: hidden menu zone + Hamburger button-->
         </header>
+        <!-- TODO: hidden menu zone -->
+        <div class="hidden_menu">
+          <div class="menu">
+            <a href="#">Pricing</a>
+            <a href="#">Product</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Community</a>
+          </div>
+        </div>
+        <div class="blur"></div>
         <!-- * Showcase -->
         <section class="showcase">
           <div class="show_left">
@@ -75,7 +85,7 @@
           </div>
           <div class="whats_right">
             <div class="section">
-              <h5 class="third_title">Track company-wide progress</h5>
+              <h5 class="third_title th_top">Track company-wide progress</h5>
               <p class="lead">
                 See how your day-to-day tasks fit into the wider vision. Go from
                 tracking progress at the milestone level all the way done to the
@@ -84,7 +94,9 @@
               </p>
             </div>
             <div class="section">
-              <h5 class="third_title">02 Advanced built-in reports</h5>
+              <h5 class="third_title th_middle">
+                02 Advanced built-in reports
+              </h5>
               <p class="lead">
                 Set internal delivery estimates and track progress toward
                 company goals. Our customisable dashboard helps you build out
@@ -92,7 +104,9 @@
               </p>
             </div>
             <div class="section">
-              <h5 class="third_title">03 Everything you need in one place</h5>
+              <h5 class="third_title th_bottom">
+                03 Everything you need in one place
+              </h5>
               <p class="lead">
                 Stop jumping from one service to another to communicate, store
                 files, track tasks and share documents. Manage offers an
@@ -113,7 +127,8 @@
               everyone motivated.”
             </p>
           </div>
-          <div class="comment middle_comment">
+          <!-- * Slider-->
+          <div id="my_slide" class="comment middle_comment">
             <img src="/images/avatar-ali.png" alt="anisha" />
             <h3>Ali Bravo</h3>
             <p class="lead">
@@ -122,6 +137,7 @@
               everyone is much more focused.”
             </p>
           </div>
+          <!-- * End Slider-->
           <div class="comment right_com">
             <img src="/images/avatar-richard.png" alt="anisha" />
             <h3>Richard Watts</h3>
@@ -132,7 +148,26 @@
             </p>
           </div>
           <div class="btn_primary get_start">Get Started</div>
+          <div class="btn_primary slide_control">
+            <label class="radio_container">
+              <input type="radio" name="check" id="t_1" />
+              <span class="check"></span>
+            </label>
+            <label class="radio_container">
+              <input type="radio" checked="checked" name="check" id="t_2" />
+              <span class="check"></span>
+            </label>
+            <label class="radio_container">
+              <input type="radio" name="check" id="t_3" />
+              <span class="check"></span>
+            </label>
+
+            <!-- * left and right
+               <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i> -->
+          </div>
         </section>
+        <!-- ! Simplify section -->
         <section class="simplify">
           <img src="/images/bg-simplify-section-desktop.svg" alt="" />
           <h1 class="heading">Simplify how your team works today.</h1>
@@ -182,5 +217,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Dark_Lover | Houssine ;)</a>.
     </div>
+    <script src="/js/main.js" type="module"></script>
   </body>
 </html>
